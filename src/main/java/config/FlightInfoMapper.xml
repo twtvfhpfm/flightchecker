@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.xjn.dao.FlightInfoMapper">
+  <insert id="insertFlight">
+    insert into FlightInfo (flightNumber,airlineName,departureDate,arrivalDate,
+    departureCityName,arrivalCityName,price,checkTime)
+    values (#{flightNumber},#{airlineName},#{departureDate},#{arrivalDate},
+    #{departureCityName},#{arrivalCityName},#{price},#{checkTime})
+  </insert>
+
+  <select id="getFlightHistory" resultType="me.xjn.pojo.FlightInfo">
+    select * from FlightInfo where flightNumber=#{flightNumber}
+  </select>
+</mapper>
